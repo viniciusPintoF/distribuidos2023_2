@@ -10,7 +10,7 @@ class ServerSocket():
                 'sub': self.sub_cmd
                 }
 
-    def start_server():
+    def start_server(self):
         bankLock = Lock()
         serverAccounts = Array(lock=bankLock)
         while True:

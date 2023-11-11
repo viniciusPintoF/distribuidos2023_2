@@ -6,13 +6,14 @@ class ServerSocket():
         self.s = socket.create_server((ip,porta), family=socket.AF_INET)
         # PARA ADICIONAR COMANDOS A GENTE PODE ADICIONAR O COMANDO AQUI NESSE DICIONÁRIO E DEPOIS DEFINIR NA PROPRIA CLASSE O MÉTODO QUE VAMOS CHAMAR
         self.commands = {
-                'add': self.add_cmd,
-                'sub': self.sub_cmd
+                'saque' : self.saque,
+                'transferencia' : self.transferencia,
+                'deposito' : self.deposito
                 }
+
 
     def start_server(self):
         bankLock = Lock()
-        serverAccounts = Array(lock=bankLock)
         while True:
             c, addr = self.s.accept()
             fmsg = c.recv(1)

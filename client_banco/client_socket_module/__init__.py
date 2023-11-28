@@ -1,10 +1,10 @@
 import socket
 
 class ClientSocket():
-    _balancecmd = "0".encode("ascii")
-    _depositcmd = "1".encode("ascii")
-    _withdrawcmd = "2".encode("ascii")
-    _transfercmd = "3".encode("ascii")
+    _balancecmd = '0'.encode("ascii")
+    _depositcmd = '1'.encode("ascii")
+    _withdrawcmd = '2'.encode("ascii")
+    _transfercmd = '3'.encode("ascii")
     
     def __init__(self, ip, port) -> None: 
         self.s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)

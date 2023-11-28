@@ -19,13 +19,12 @@ parser.add_argument("-v", "--valor", type=float, help="valor monetario da operac
 parser.add_argument("-d", "--destino", help="rg associado a conta destino da transferencia")
 args = parser.parse_args()
 print(args)
-# exit(0)
 
 # Estabelece conexão com o servidor
-SERVER_IP = '127.0.0.1'
-SERVER_PORT = 65432
+SERVER_IP = 'localhost'
+SERVER_PORT = 9999
 try:
-    print("Estabelecendo conexão com o servidor...")
+    # print("Estabelecendo conexão com o servidor...")
     s = ClientSocket(SERVER_IP, SERVER_PORT)
     s.connect()
 except Exception as e:
@@ -33,7 +32,7 @@ except Exception as e:
     print(e)
     exit(1)
 else:
-    print("Conexão estabelecida.")
+    print("Conexão estabelecid com servidor.")
 
 # Realiza operação
 if args.operacao == CMD_SALDO:
@@ -56,5 +55,4 @@ if args.operacao == CMD_TRANSFERENCIA:
         print("sem destino de transferencia, digite python3 client.py -h para ajuda.")
         exit(1)
     s.transfer(args.conta, args.destino, args.valor)
-    
     

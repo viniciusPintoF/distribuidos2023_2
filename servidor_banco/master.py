@@ -1,4 +1,4 @@
-import argpare
+import argparse
 from server_socket_module import ServerSocket
 try:
     parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
@@ -7,5 +7,6 @@ try:
     args = parser.parse_args()
     s = ServerSocket(ip=args.ip, porta=int(args.porta))
     s.start_server()
-except:
+except Exception as e:
     print("Houve erro")
+    print(e)

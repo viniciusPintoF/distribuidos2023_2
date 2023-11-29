@@ -1,5 +1,5 @@
 import argparse
-from .consoleModule import SingletonConsoleModule
+from consoleModule import SingletonConsoleModule
 from client_socket_module import ClientSocket
 
 # Lida com argumentos
@@ -20,10 +20,10 @@ try:
     cs = ClientSocket(args.ip, args.porta)
     cm = SingletonConsoleModule()
     clock = 0
-    s.connect()
+    cs.connect()
     print("Conexão com o servidor")
     while True:
-        clock += cm.getLoop(cs,clock)
+        clock = cm.getLoop(cs,clock+1)
     s.shtdnw_close()
 except Exception as e:
     print("Erro conectando ao servidor:")

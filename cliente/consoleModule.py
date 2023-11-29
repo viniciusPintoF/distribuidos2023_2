@@ -1,4 +1,4 @@
-from .commHandler import commHandler
+from commHandler import CommHandler
 
 class SingletonConsoleModule():
     _instance = None
@@ -10,7 +10,7 @@ class SingletonConsoleModule():
     def getLoop(self,socketModule,clock):
         x = input("> ")
         comando = x.split()
-        comando = commHandler(comando, socketModule, clock)
+        comando = CommHandler(socketModule, comando, clock)
         saida = comando.exec()
         print("[Console Output] ", saida[0], "Clock: ", saida[1])
         return saida[1]

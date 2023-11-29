@@ -9,6 +9,8 @@ help_commands = """operação a ser realizada
     deposito: realiza um deposito na conta
     transf: transfere valor da conta acessada para a conta DESTINO
 """
+
+# Cria um parser para os argumentos
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument("ip", help="IP Servidor")
 parser.add_argument("-p", "--porta", default="9999", help="Porta")
